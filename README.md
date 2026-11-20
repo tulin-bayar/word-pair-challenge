@@ -9,11 +9,15 @@ A local WPF memory game for Project 03. Find all eight English software term–d
 3. Run `dotnet run --project WordPairChallenge.csproj`.
 4. Alternatively, open the .csproj in Visual Studio with .NET 10 WPF support and the .NET desktop development workload, then press F5.
 
-## Contributors
+## Team responsibilities
 
-Tülin Bayar developed the application and tested it on Windows.
+| Team member | Project responsibilities | Live presentation |
+| --- | --- | --- |
+| Tülin Bayar | Review the screen layout, check navigation and verify the player instructions against the game. | Introduce the goal and play a few turns. |
+| Aygül | Review the eight term–definition pairs, trace the card IDs and check how selections count as moves. | Walk through one pair and demonstrate a repeated click. |
+| Gökhan Perçem | Check the mismatch delay, test restarting during a turn and verify the final time and star rating. | Demonstrate input validation and explain the result screen. |
 
-Presentation assignments: Tülin Bayar introduces and plays the game, Aygül explains the card model and matching logic, and Gökhan Perçem demonstrates timing, validation and scoring.
+Each team member has two and a half minutes, including the live actions. See [the presentation script](DEMO.md).
 
 ## Implementation
 
