@@ -1,8 +1,8 @@
 # Word Pair Challenge • live presentation
-Target 7 minutes 30 seconds including live actions. Aygül prepares a matching walkthrough. Gökhan prepares the timing and validation demonstration. Tülin developed the application and introduces and plays it. Rehearse the actions and use your actual contributions in the final remarks.
+Allow 2 minutes 30 seconds per speaker, including the live actions.
 
 ## 0:00–2:30 • Tülin • introduction and gameplay
-“Hi everyone. Our project is called Word Pair Challenge. I built this game in C# using WPF. The goal is simple. There are sixteen cards and eight pairs. Each pair has a software term and its English definition. I’ll show you how to play. Then my teammates will explain how the cards work and test what happens when a player clicks too quickly.”
+“Hi everyone. This is Word Pair Challenge, a Windows game made with C# and WPF. There are sixteen cards. We need to find eight pairs. Each pair is a software word and its meaning. I’ll show you how to play. Then Aygül will explain how the cards match, and Gökhan will show you how the timer and score work.”
 
 [Show Home. Press Start Game. Point out the counters. Read the first two cards aloud, whether they match or not.]
 
@@ -38,4 +38,4 @@ Target 7 minutes 30 seconds including live actions. Aygül prepares a matching w
 
 [Show the results screenshot and point to the time, moves and stars.]
 
-“The timer stops at the eighth match. Stars depend on moves. Ten or fewer earns three stars. Eighteen earns two, as we see here. Restart begins a fresh round, and Home takes us to the start screen. Tülin developed the game. Our walkthrough covered matching and input validation. The main lesson was that even a small game needs clear rules for every click. Thank you.”
+“The timer stops at the eighth match. Stars depend on moves. Ten or fewer earns three stars. Eighteen earns two, as we see here. Restart begins a fresh round, and Home takes us to the start screen. The main lesson was that even a small game needs clear rules for every click. Thank you.”
