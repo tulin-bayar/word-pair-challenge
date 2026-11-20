@@ -17,7 +17,7 @@ A local WPF memory game for Project 03. Find all eight English software term–d
 | Aygül | Review the eight term–definition pairs, trace the card IDs and check how selections count as moves. | Walk through one pair and demonstrate a repeated click. |
 | Gökhan Perçem | Check the mismatch delay, test restarting during a turn and verify the final time and star rating. | Demonstrate input validation and explain the result screen. |
 
-Each team member has two and a half minutes, including the live actions. See [the presentation script](DEMO.md).
+Each team member has two and a half minutes, including the live actions.
 
 ## Implementation
 
