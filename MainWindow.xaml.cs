@@ -16,7 +16,7 @@ public partial class MainWindow : Window
         ["Variable"] = "A name that holds a value",
         ["Compiler"] = "Translates source code into target code",
         ["Debugger"] = "Lets you pause and inspect a running program",
-        ["Stack"] = "Removes the most recently added item first",
+        ["Stack"] = "Items go in and out at the top",
         ["Queue"] = "Removes the earliest added item first",
         ["Boolean"] = "A type with only true or false values",
         ["Commit"] = "A saved snapshot in Git history"
@@ -100,7 +100,6 @@ public partial class MainWindow : Window
         RefreshTime();
         clock.Start();
         UpdateCounters();
-        Feedback.Text = "Choose your first card.";
     }
 
     private async void Card_Click(object sender, RoutedEventArgs e)
@@ -113,7 +112,6 @@ public partial class MainWindow : Window
         if (first is null)
         {
             first = button;
-            Feedback.Text = "Choose a second card.";
             return;
         }
 
@@ -130,16 +128,11 @@ public partial class MainWindow : Window
             {
                 ShowResults();
             }
-            else
-            {
-                Feedback.Text = "Match found! Choose your next card.";
-            }
             return;
         }
 
         waiting = true;
         UpdateCounters();
-        Feedback.Text = "Different pairs. Take a look before they turn back.";
         int turnRound = round;
         await Task.Delay(1100);
         // A reset may have replaced the entire board while this turn was waiting.
@@ -147,7 +140,6 @@ public partial class MainWindow : Window
         HideCard(previous);
         HideCard(button);
         waiting = false;
-        Feedback.Text = "Try another pair.";
     }
 
     private void ShowResults()
@@ -166,7 +158,6 @@ public partial class MainWindow : Window
         AutomationProperties.SetName(ResultStars, $"{stars} out of 3 stars");
         ResultTime.Text = TimeText;
         ResultMoves.Text = moves.ToString();
-        Feedback.Text = "Board complete!";
         GameScreen.IsEnabled = false;
         ResultsOverlay.Visibility = Visibility.Visible;
         ResultRestart.Focus();
@@ -182,8 +173,16 @@ public partial class MainWindow : Window
     private void HideCard(Button button)
     {
         button.Background = (Brush)FindResource("Back");
-        button.ContentTemplate = (DataTemplate)FindResource("BackDesign");
-        button.Content = "?";
+        button.Content = new TextBlock
+        {
+            Text = "<>",
+            FontFamily = new FontFamily("Consolas"),
+            FontSize = 28,
+            FontWeight = FontWeights.Bold,
+            Foreground = Brushes.Lavender,
+            HorizontalAlignment = HorizontalAlignment.Center,
+            VerticalAlignment = VerticalAlignment.Center
+        };
         AutomationProperties.SetName(button, $"Hidden card {Board.Children.IndexOf(button) + 1}");
     }
 
@@ -198,7 +197,6 @@ public partial class MainWindow : Window
     private void DisplayFace(Button button, bool solved)
     {
         var card = (Card)button.DataContext;
-        button.ContentTemplate = null;
         button.Background = (Brush)FindResource(solved ? "Solved" : "Open");
         var face = new StackPanel { VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(7, 2, 7, 2) };
         string label = card.IsWord ? "TERM" : "DEFINITION";
